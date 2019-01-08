@@ -7,45 +7,64 @@
     android:background="?android:attr/selectableItemBackground"
     android:layout_marginStart="@dimen/default_post_lateral_margin"
     android:layout_marginEnd="@dimen/default_post_lateral_margin"
-    android:layout_marginBottom="@dimen/default_margin"
+    android:layout_marginBottom="5dp"
+    android:clickable="true"
     android:elevation="15dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView_profile_photo"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="Foto de perfil"
+            android:src="@drawable/ic_person_outline_black_24dp"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_overlay="true"
+            app:civ_border_width="1dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textview_hora_da_postagem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_person_outline_black_24dp" />
+
         <TextView
             android:id="@+id/textview_titulo"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:text="@string/titulo"
             android:textSize="@dimen/title_text_size"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:typeface="sans"
+            app:layout_constraintStart_toEndOf="@+id/imageView_profile_photo"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textview_hora_da_postagem"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:text="@string/hora"
             android:textSize="@dimen/time_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:typeface="sans"
+            app:layout_constraintStart_toEndOf="@+id/imageView_profile_photo"
             app:layout_constraintTop_toBottomOf="@id/textview_titulo" />
 
         <ImageView
             android:id="@+id/imageview_post"
             android:layout_width="match_parent"
             android:layout_height="@dimen/default_image_size"
+            android:layout_marginTop="8dp"
             android:contentDescription="@string/post_image"
             android:scaleType="centerCrop"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textview_hora_da_postagem"
@@ -53,18 +72,17 @@
 
         <TextView
             android:id="@+id/textview_descricao"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:text="@string/descricao"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imageview_post" />
 
         <!--Layout dos botoes de acao-->
         <LinearLayout
+            style="@style/Widget.AppCompat.ButtonBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
