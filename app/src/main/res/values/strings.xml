@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CardView</string>
+    <string name="titulo">titulo</string>
+    <string name="hora">hora</string>
+    <string name="post_image">Post Image</string>
+    <string name="descricao">Descriação</string>
+    <string name="curtir">Curtir</string>
+    <string name="comentar">Comentar</string>
+</resources>
